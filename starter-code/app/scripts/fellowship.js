@@ -20,6 +20,7 @@ var lands = ['The Shire', 'Rivendell', 'Mordor'];
 var body = document.querySelector('body');
 
 var debug = true;
+var annoying = false;
 
 // Part 1
 
@@ -173,7 +174,7 @@ function forgeTheFellowShip() {
     elementsToMove.forEach(function(element){
       moveToElement.appendChild(element);
         // after each character is added make an alert that they have joined your party
-      alert(element.textContent + " joined the fellowship!");
+      if (annoying) alert(element.textContent + " joined the fellowship!");
     });
   }
 
@@ -188,12 +189,20 @@ console.log("****PART 7 COMPLETE****");
 
 // Part 8
 
-
 function theBalrog() {
   // change the 'Gandalf' textNode to 'Gandalf the White'
+  var gandolfElement = document.querySelectorAll('.buddy')[0];
+  gandolfElement.textContent = "Gandalf the White";
   // apply style to the element
   // make the background 'white', add a grey border
+  gandolfElement.style.background = "white";
+  //gandolfElement.style.color = "grey";
+  gandolfElement.style.border = "3px solid grey";
+
 }
+
+theBalrog();
+console.log("****PART 8 COMPLETE****");
 
 
 // Part 9
