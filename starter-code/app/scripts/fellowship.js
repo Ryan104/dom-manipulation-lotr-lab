@@ -108,6 +108,7 @@ function makeBuddies() {
   var buddiesUL = document.createElement('ul');
   buddies.forEach(function(buddy){
     var newBuddyElement = document.createElement('li');
+    newBuddyElement.className = "buddy";
     newBuddyElement.textContent = buddy;
     buddiesUL.appendChild(newBuddyElement);
   });
@@ -123,10 +124,13 @@ console.log("****PART 4 COMPLETE****");
 
 // Part 5
 
-
 function beautifulStranger() {
   // change the 'Strider' textnode to 'Aragorn'
+  document.querySelectorAll('.buddy')[3].textContent = "Strider";
 }
+
+beautifulStranger();
+console.log("****PART 5 COMPLETE****");
 
 
 // Part 6
