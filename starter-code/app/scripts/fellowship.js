@@ -19,27 +19,63 @@ var buddies = [
 var lands = ['The Shire', 'Rivendell', 'Mordor'];
 var body = document.querySelector('body');
 
+var debug = true;
 
 // Part 1
 
 
 function makeMiddleEarth() {
   // create a section tag with an id of middle-earth
+  var sectionME = document.createElement("section");
+  sectionME.id = "middleEarth";
+
   // inside, add each land as an article tag
-  // inside each article tag include an h1 with the name of the land
+  lands.forEach(function(land){
+    // Create article for each land in lands
+    var thisLand = document.createElement("article");
+    thisLand.id = land; // Give each land an ID
+
+    // inside each article tag include an h1 with the name of the land
+    var landNameHeader = document.createElement("h1");
+    landNameHeader.textContent = land;
+    thisLand.appendChild(landNameHeader);
+
+    // Add each land to Middle Earth
+    sectionME.appendChild(thisLand);
+  });
+
   // append middle-earth to your document body
+  body.appendChild(sectionME);
 }
 
 makeMiddleEarth();
+console.log("****PART 1 COMPLETE****");
 
 
 // Part 2
 
 function makeHobbits() {
   // display an unordered list of hobbits in the shire (which is the first article tag on the page)
-  // give each hobbit a class of hobbit
+
+  // Create a <ul> element with class hobbits
+  var hobbitsUL = document.createElement("ul");
+  hobbitsUL.className = "hobbits";
+
+  // Itterate through the 'hobbits' array and...
+  hobbits.forEach(function(hobbitName){
+    // Create hobbit <li> elements with class hobbit and add them to the hobbits <ul>
+    var newHobbitLI = document.createElement("li");
+    newHobbitLI.className = "hobbit";
+    newHobbitLI.textContent = hobbitName;
+    hobbitsUL.appendChild(newHobbitLI);
+  });
+
+  // Append the hobbits <ul> to the first <article> tag
+  document.querySelectorAll('article')[0].appendChild(hobbitsUL);
 }
 
+makeHobbits();
+console.log("****PART 2 COMPLETE****");
 
 // Part 3
 
