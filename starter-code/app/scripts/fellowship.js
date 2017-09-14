@@ -106,12 +106,15 @@ function makeBuddies() {
 
   // attach an unordered list of the 'buddies' in the aside
   var buddiesUL = document.createElement('ul');
+  buddiesUL.className = "buddies";
+
   buddies.forEach(function(buddy){
     var newBuddyElement = document.createElement('li');
     newBuddyElement.className = "buddy";
     newBuddyElement.textContent = buddy;
     buddiesUL.appendChild(newBuddyElement);
   });
+
   buddiesElement.appendChild(buddiesUL);
 
   // insert your aside as a child element of rivendell
@@ -152,12 +155,35 @@ console.log("****PART 6 COMPLETE****");
 
 // Part 7
 
-
 function forgeTheFellowShip() {
   // create a new div called 'the-fellowship' within rivendell
+  var theFELLOWSHIP = document.createElement('div');
+  theFELLOWSHIP.className = 'the-fellowship';
+  document.querySelectorAll('article')[1].appendChild(theFELLOWSHIP);
+
   // add each hobbit and buddy one at a time to 'the-fellowship'
-  // after each character is added make an alert that they have joined your party
+  function addAll(classToMove, moveToThisClass){
+    // addAll - takes all elements of a certain class and moves them 
+    // (takes the string names of the parent like ".hobbits" or ".buddies" or ".the-fellowship")
+    var elementsToMove = document.querySelectorAll(classToMove);
+    var moveToElement = document.querySelector(moveToThisClass);
+
+    if (debug) console.log(elementsToMove);
+
+    elementsToMove.forEach(function(element){
+      moveToElement.appendChild(element);
+        // after each character is added make an alert that they have joined your party
+      alert(element.textContent + " joined the fellowship!");
+    });
+  }
+
+  addAll(".hobbit", ".the-fellowship");
+  addAll(".buddy", ".the-fellowship");
+
 }
+
+forgeTheFellowShip();
+console.log("****PART 7 COMPLETE****");
 
 
 // Part 8
