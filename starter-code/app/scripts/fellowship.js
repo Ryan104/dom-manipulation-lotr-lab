@@ -137,7 +137,17 @@ console.log("****PART 5 COMPLETE****");
 
 function leaveTheShire() {
   // assemble the hobbits and move them to Rivendell
+
+  // Store the hobbits <ul> in a variable
+  var hobbitsUL = document.querySelectorAll('.hobbits')[0];
+
+  // Append the hobbits <ul> to rivendell <article>
+  // Interesting: .appendChild(element) actuall moves element to the new parent so I dont need to remove it from the shire
+  document.querySelectorAll('article')[1].appendChild(hobbitsUL);
 }
+
+leaveTheShire();
+console.log("****PART 6 COMPLETE****");
 
 
 // Part 7
