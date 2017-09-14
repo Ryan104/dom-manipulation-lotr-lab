@@ -33,7 +33,7 @@ function makeMiddleEarth() {
   lands.forEach(function(land){
     // Create article for each land in lands
     var thisLand = document.createElement("article");
-    thisLand.id = land; // Give each land an ID
+    //thisLand.id = land; // Give each land an ID
 
     // inside each article tag include an h1 with the name of the land
     var landNameHeader = document.createElement("h1");
@@ -81,20 +81,33 @@ console.log("****PART 2 COMPLETE****");
 
 function keepItSecretKeepItSafe() {
   // create a div with an id of 'the-ring'
+  var ringElement = document.createElement("div");
+  ringElement.id = "the-ring";
+
   // give the div a class of 'magic-imbued-jewelry'
+  ringElement.className = "magic-imbued-jewelry";
+
   // add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
+  ringElement.addEventListener("click", nazgulScreech);
+
   // add the ring as a child of Frodo
+  document.querySelectorAll(".hobbit")[0].appendChild(ringElement);
 }
+
+keepItSecretKeepItSafe();
+console.log("****PART 3 COMPLETE****");
 
 
 // Part 4
-
 
 function makeBuddies() {
   // create an aside tag
   // attach an unordered list of the 'buddies' in the aside
   // insert your aside as a child element of rivendell
 }
+
+makeBuddies();
+console.log("****PART 4 COMPLETE****");
 
 
 // Part 5
