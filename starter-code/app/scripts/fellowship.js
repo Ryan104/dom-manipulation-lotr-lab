@@ -102,8 +102,19 @@ console.log("****PART 3 COMPLETE****");
 
 function makeBuddies() {
   // create an aside tag
+  var buddiesElement = document.createElement('aside');
+
   // attach an unordered list of the 'buddies' in the aside
+  var buddiesUL = document.createElement('ul');
+  buddies.forEach(function(buddy){
+    var newBuddyElement = document.createElement('li');
+    newBuddyElement.textContent = buddy;
+    buddiesUL.appendChild(newBuddyElement);
+  });
+  buddiesElement.appendChild(buddiesUL);
+
   // insert your aside as a child element of rivendell
+  document.querySelectorAll('article')[1].appendChild(buddiesElement);
 }
 
 makeBuddies();
