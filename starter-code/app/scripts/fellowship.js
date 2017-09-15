@@ -271,6 +271,23 @@ console.log("****PART 11 COMPLETE****");
 
 function thereAndBackAgain() {
   // remove Gollum and the Ring from the document
+  var gollum = document.getElementById("gollum");
+  gollum.remove();
+
   // remove all the baddies from the document
+  // 'baddies' or 'buddies'??
+  var allBuddies = document.querySelectorAll('.buddy');
+  allBuddies.forEach(function(buddy){
+    buddy.remove();
+  });
+
   // Move all the hobbits back to the shire
+  var allHobbits =  document.querySelectorAll('.hobbit');
+  var theShire = document.querySelectorAll('article')[0];
+  allHobbits.forEach(function(hobbit){
+    theShire.appendChild(hobbit);
+  });
 }
+
+thereAndBackAgain();
+console.log("****PART 12 COMPLETE****");
