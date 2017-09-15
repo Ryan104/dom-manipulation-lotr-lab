@@ -18,6 +18,7 @@ var buddies = [
 
 var lands = ['The Shire', 'Rivendell', 'Mordor'];
 var body = document.querySelector('body');
+var ringUseCount = 0;
 
 var debug = true;
 var annoying = false;
@@ -67,6 +68,7 @@ function makeHobbits() {
     // Create hobbit <li> elements with class hobbit and add them to the hobbits <ul>
     var newHobbitLI = document.createElement("li");
     newHobbitLI.className = "hobbit";
+    newHobbitLI.id = hobbitName.split(" ")[0].toLowerCase();
     newHobbitLI.textContent = hobbitName;
     hobbitsUL.appendChild(newHobbitLI);
   });
@@ -89,7 +91,30 @@ function keepItSecretKeepItSafe() {
   ringElement.className = "magic-imbued-jewelry";
 
   // add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
-  ringElement.addEventListener("click", nazgulScreech);
+  ringElement.addEventListener("click", function(){
+    nazgulScreech();
+    ringUseCount++;
+    if (ringUseCount >= 3){
+      // ENDO OF THE WORLD
+      endMessage = "The Ring has been returned to Sauron and the world is over.";
+      body.innerHTML = "<h1 style='font-size: 50px'>" + endMessage + "</h1>";
+    }
+
+    // BONUS - FRODO Disapaer for a bit
+    var frodo = document.getElementById("frodo");
+    var fadeEffect = setInterval(function(){
+      if (!frodo.style.opacity) {
+        frodo.style.opacity = 1;
+      }
+      if (frodo.style.opacity < 0.1){
+        frodo.style.opacity = 1;
+        clearInterval(fadeEffect);
+      } else {
+        frodo.style.opacity -= 0.1;
+      }
+    }, 200);
+
+  });
 
   // add the ring as a child of Frodo
   document.querySelectorAll(".hobbit")[0].appendChild(ringElement);
@@ -291,3 +316,5 @@ function thereAndBackAgain() {
 
 thereAndBackAgain();
 console.log("****PART 12 COMPLETE****");
+
+
