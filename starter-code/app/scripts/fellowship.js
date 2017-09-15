@@ -250,9 +250,21 @@ console.log("****PART 10 COMPLETE****");
 
 function weWantsIt() {
   // Create a div with an id of 'gollum' and add it to Mordor
+  var gollum = document.createElement('div');
+  var mordor = document.querySelectorAll('article')[2];
+  gollum.id = "gollum";
+  mordor.appendChild(gollum);
+
   // Remove the ring from Frodo and give it to Gollum
+  var ring = document.querySelector("#the-ring");
+  gollum.appendChild(ring);
+
   // Move Gollum into Mount Doom
+  document.querySelector('#mount-doom').appendChild(gollum);
 }
+
+weWantsIt();
+console.log("****PART 11 COMPLETE****");
 
 
 // Part 12
