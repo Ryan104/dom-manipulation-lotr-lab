@@ -128,7 +128,7 @@ ul {
 }
 
 button {
-  height: 100px;
+  height: 30px;
   width: 200px;
   cursor: pointer;
   z-index: 1000;
