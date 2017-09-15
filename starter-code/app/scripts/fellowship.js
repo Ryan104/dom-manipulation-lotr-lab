@@ -21,8 +21,11 @@ var body = document.querySelector('body');
 var ringUseCount = 0;
 
 var debug = true;
-var annoying = false; //  ---- SET TO TRUE TO SEE ALERT BOXES ---- //
-var useButton = true; // ---- SET TRUE TO STEP THROUGH FUNCTIONS WITH BUTTON ---- //
+
+
+
+var annoying = false; //  ---- SET TO TRUE TO SEE ALERT() BOXES ---- //
+var useButton = true; // ---- SET FALSE TO RUN ALL FUNCTION WITHOUT CLICKING BUTTON ---- //
 
 // Part 1
 
@@ -51,7 +54,7 @@ function makeMiddleEarth() {
   body.appendChild(sectionME);
 }
 
-// makeMiddleEarth();
+if (!useButton) makeMiddleEarth();
 // console.log("****PART 1 COMPLETE****");
 
 
@@ -78,7 +81,7 @@ function makeHobbits() {
   document.querySelectorAll('article')[0].appendChild(hobbitsUL);
 }
 
-// makeHobbits();
+if (!useButton)makeHobbits();
 // console.log("****PART 2 COMPLETE****");
 
 // Part 3
@@ -121,7 +124,7 @@ function keepItSecretKeepItSafe() {
   document.querySelectorAll(".hobbit")[0].appendChild(ringElement);
 }
 
-// keepItSecretKeepItSafe();
+if (!useButton) keepItSecretKeepItSafe();
 // console.log("****PART 3 COMPLETE****");
 
 
@@ -148,7 +151,7 @@ function makeBuddies() {
   document.querySelectorAll('article')[1].appendChild(buddiesElement);
 }
 
-// makeBuddies();
+if (!useButton) makeBuddies();
 // console.log("****PART 4 COMPLETE****");
 
 
@@ -159,7 +162,7 @@ function beautifulStranger() {
   document.querySelectorAll('.buddy')[3].textContent = "Strider";
 }
 
-// beautifulStranger();
+if (!useButton) beautifulStranger();
 // console.log("****PART 5 COMPLETE****");
 
 
@@ -176,7 +179,7 @@ function leaveTheShire() {
   document.querySelectorAll('article')[1].appendChild(hobbitsUL);
 }
 
-// leaveTheShire();
+if (!useButton) leaveTheShire();
 // console.log("****PART 6 COMPLETE****");
 
 
@@ -209,7 +212,7 @@ function forgeTheFellowShip() {
 
 }
 
-// forgeTheFellowShip();
+if (!useButton) forgeTheFellowShip();
 // console.log("****PART 7 COMPLETE****");
 
 
@@ -227,7 +230,7 @@ function theBalrog() {
 
 }
 
-// theBalrog();
+if (!useButton) theBalrog();
 // console.log("****PART 8 COMPLETE****");
 
 
@@ -247,7 +250,7 @@ function hornOfGondor() {
   document.querySelectorAll('article')[1].appendChild(boromirElement);
 }
 
-// hornOfGondor();
+if (!useButton) hornOfGondor();
 // console.log("****PART 9 COMPLETE****");
 
 
@@ -268,7 +271,7 @@ function itsDangerousToGoAlone(){
   mordorElement.appendChild(mountdoom);
 }
 
-// itsDangerousToGoAlone();
+if (!useButton) itsDangerousToGoAlone();
 // console.log("****PART 10 COMPLETE****");
 
 
@@ -289,7 +292,7 @@ function weWantsIt() {
   document.querySelector('#mount-doom').appendChild(gollum);
 }
 
-// weWantsIt();
+if (!useButton) weWantsIt();
 // console.log("****PART 11 COMPLETE****");
 
 
@@ -317,7 +320,7 @@ function thereAndBackAgain() {
   });
 }
 
-//thereAndBackAgain();
+if (!useButton) thereAndBackAgain();
 //console.log("****PART 12 COMPLETE****");
 
 // THE BUTTON
