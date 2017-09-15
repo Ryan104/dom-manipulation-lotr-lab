@@ -169,12 +169,12 @@ function forgeTheFellowShip() {
     var elementsToMove = document.querySelectorAll(classToMove);
     var moveToElement = document.querySelector(moveToThisClass);
 
-    if (debug) console.log(elementsToMove);
-
     elementsToMove.forEach(function(element){
       moveToElement.appendChild(element);
         // after each character is added make an alert that they have joined your party
-      if (annoying) alert(element.textContent + " joined the fellowship!");
+      var message = element.textContent + " joined the fellowship!"
+      if (annoying) alert(message);
+      console.log("Alert: " + message);
     });
   }
 
@@ -209,11 +209,20 @@ console.log("****PART 8 COMPLETE****");
 
 function hornOfGondor() {
   // pop up an alert that the horn of gondor has been blown
+  var message = "The horn of Gondor has been blown!";
+  if (annoying) alert(message);
+  console.log("Alert: " + message);
+
   // Boromir's been killed by the Uruk-hai!
   // put a linethrough on boromir's name
+  var boromirElement = document.querySelectorAll('.buddy')[4];
+  boromirElement.style.textDecoration = 'line-through';
   // Remove Boromir from the Fellowship
+  document.querySelectorAll('article')[1].appendChild(boromirElement);
 }
 
+hornOfGondor();
+console.log("****PART 8 COMPLETE****");
 
 // Part 10
 
