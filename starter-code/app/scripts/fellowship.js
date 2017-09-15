@@ -222,14 +222,28 @@ function hornOfGondor() {
 }
 
 hornOfGondor();
-console.log("****PART 8 COMPLETE****");
+console.log("****PART 9 COMPLETE****");
+
 
 // Part 10
 
 function itsDangerousToGoAlone(){
   // take Frodo and Sam out of the fellowship and move them to Mordor
+  var mordorElement = document.querySelectorAll('article')[2];
+  var hobbitsList = document.querySelector('.the-fellowship').querySelectorAll(".hobbit");
+
+  for (var i=0; i < 2; i++){
+    mordorElement.appendChild(hobbitsList[i]);
+  }
+
   // add a div with an id of 'mount-doom' to Mordor
+  var mountdoom = document.createElement('div');
+  mountdoom.id = "mount-doom";
+  mordorElement.appendChild(mountdoom);
 }
+
+itsDangerousToGoAlone();
+console.log("****PART 10 COMPLETE****");
 
 
 // Part 11
