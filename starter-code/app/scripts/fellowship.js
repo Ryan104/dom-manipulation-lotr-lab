@@ -22,6 +22,7 @@ var ringUseCount = 0;
 
 var debug = true;
 var annoying = false; //  ---- SET TO TRUE TO SEE ALERT BOXES ---- //
+var useButton = true; // ---- SET TRUE TO STEP THROUGH FUNCTIONS WITH BUTTON ---- //
 
 // Part 1
 
