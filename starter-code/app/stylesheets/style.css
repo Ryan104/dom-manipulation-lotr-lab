@@ -34,6 +34,7 @@ body {
   width: 100%;
   height: 117%;
   background-color: rgba(0,0,0,0.3); /*dim the background*/
+  z-index: -1;
 }
 
 section {
@@ -115,7 +116,23 @@ ul {
 }
 
 
+.chapter {
+  font-family: arial;
+  color: brown;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  border: 2px solid black;
+  background: white;
+  text-align: center;
+}
 
+button {
+  height: 100px;
+  width: 200px;
+  cursor: pointer;
+  z-index: 1000;
+}
 
 
 

@@ -21,7 +21,7 @@ var body = document.querySelector('body');
 var ringUseCount = 0;
 
 var debug = true;
-var annoying = false;
+var annoying = false; //  ---- SET TO TRUE TO SEE ALERT BOXES ---- //
 
 // Part 1
 
@@ -50,8 +50,8 @@ function makeMiddleEarth() {
   body.appendChild(sectionME);
 }
 
-makeMiddleEarth();
-console.log("****PART 1 COMPLETE****");
+// makeMiddleEarth();
+// console.log("****PART 1 COMPLETE****");
 
 
 // Part 2
@@ -77,8 +77,8 @@ function makeHobbits() {
   document.querySelectorAll('article')[0].appendChild(hobbitsUL);
 }
 
-makeHobbits();
-console.log("****PART 2 COMPLETE****");
+// makeHobbits();
+// console.log("****PART 2 COMPLETE****");
 
 // Part 3
 
@@ -120,8 +120,8 @@ function keepItSecretKeepItSafe() {
   document.querySelectorAll(".hobbit")[0].appendChild(ringElement);
 }
 
-keepItSecretKeepItSafe();
-console.log("****PART 3 COMPLETE****");
+// keepItSecretKeepItSafe();
+// console.log("****PART 3 COMPLETE****");
 
 
 // Part 4
@@ -147,8 +147,8 @@ function makeBuddies() {
   document.querySelectorAll('article')[1].appendChild(buddiesElement);
 }
 
-makeBuddies();
-console.log("****PART 4 COMPLETE****");
+// makeBuddies();
+// console.log("****PART 4 COMPLETE****");
 
 
 // Part 5
@@ -158,8 +158,8 @@ function beautifulStranger() {
   document.querySelectorAll('.buddy')[3].textContent = "Strider";
 }
 
-beautifulStranger();
-console.log("****PART 5 COMPLETE****");
+// beautifulStranger();
+// console.log("****PART 5 COMPLETE****");
 
 
 // Part 6
@@ -175,8 +175,8 @@ function leaveTheShire() {
   document.querySelectorAll('article')[1].appendChild(hobbitsUL);
 }
 
-leaveTheShire();
-console.log("****PART 6 COMPLETE****");
+// leaveTheShire();
+// console.log("****PART 6 COMPLETE****");
 
 
 // Part 7
@@ -208,8 +208,8 @@ function forgeTheFellowShip() {
 
 }
 
-forgeTheFellowShip();
-console.log("****PART 7 COMPLETE****");
+// forgeTheFellowShip();
+// console.log("****PART 7 COMPLETE****");
 
 
 // Part 8
@@ -226,8 +226,8 @@ function theBalrog() {
 
 }
 
-theBalrog();
-console.log("****PART 8 COMPLETE****");
+// theBalrog();
+// console.log("****PART 8 COMPLETE****");
 
 
 // Part 9
@@ -246,8 +246,8 @@ function hornOfGondor() {
   document.querySelectorAll('article')[1].appendChild(boromirElement);
 }
 
-hornOfGondor();
-console.log("****PART 9 COMPLETE****");
+// hornOfGondor();
+// console.log("****PART 9 COMPLETE****");
 
 
 // Part 10
@@ -267,8 +267,8 @@ function itsDangerousToGoAlone(){
   mordorElement.appendChild(mountdoom);
 }
 
-itsDangerousToGoAlone();
-console.log("****PART 10 COMPLETE****");
+// itsDangerousToGoAlone();
+// console.log("****PART 10 COMPLETE****");
 
 
 // Part 11
@@ -288,8 +288,8 @@ function weWantsIt() {
   document.querySelector('#mount-doom').appendChild(gollum);
 }
 
-weWantsIt();
-console.log("****PART 11 COMPLETE****");
+// weWantsIt();
+// console.log("****PART 11 COMPLETE****");
 
 
 // Part 12
@@ -301,10 +301,12 @@ function thereAndBackAgain() {
 
   // remove all the baddies from the document
   // 'baddies' or 'buddies'??
-  var allBuddies = document.querySelectorAll('.buddy');
-  allBuddies.forEach(function(buddy){
-    buddy.remove();
-  });
+  // var allBuddies = document.querySelectorAll('.buddy');
+  // allBuddies.forEach(function(buddy){
+  //   buddy.remove();
+  // });
+  var sauronElement = document.querySelectorAll('article')[2];
+  sauronElement.style.background = "none";
 
   // Move all the hobbits back to the shire
   var allHobbits =  document.querySelectorAll('.hobbit');
@@ -314,7 +316,35 @@ function thereAndBackAgain() {
   });
 }
 
-thereAndBackAgain();
-console.log("****PART 12 COMPLETE****");
+//thereAndBackAgain();
+//console.log("****PART 12 COMPLETE****");
 
+// THE BUTTON
+var button = document.getElementById('btn-chapter');
+var chapterLog = document.getElementById('chapter-number');
+
+var chapterIndex = 0;
+var book = [
+  makeMiddleEarth, 
+  makeHobbits, 
+  keepItSecretKeepItSafe, 
+  makeBuddies,
+  beautifulStranger,
+  leaveTheShire,
+  forgeTheFellowShip,
+  theBalrog,
+  hornOfGondor,
+  itsDangerousToGoAlone,
+  weWantsIt,
+  thereAndBackAgain
+  ];
+
+book[chapterIndex]();
+
+function onClick(){
+  if (chapterIndex < 11){
+    book[++chapterIndex]();
+    chapterLog.textContent = "Chapter " + (chapterIndex + 1);
+  }
+};
 
